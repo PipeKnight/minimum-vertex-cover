@@ -38,14 +38,8 @@ def main():
         if algs == 'Approx':
             approximation.run_approx(input_graph, cutoff_time)
         else:
-            if algs == 'LS1':
-                pass  # replace this line with a call to LS1
-            else:
-                if algs == 'LS2':
-                    pass  # replace this line with a call to LS2
-                else:
-                    print('error: please choose among [BnB|Approx|LS1|LS2]')
-                    exit(1)
+            print('error: please choose among [BnB|Approx|LS1|LS2]')
+            exit(1)
 
 
 if __name__ == '__main__':

@@ -16,17 +16,21 @@ import branch_and_bound
 def main():
 
     parser = argparse.ArgumentParser(description='arguments')
+
     parser.add_argument('-inst', help='path to input graph', required=True)
     parser.add_argument(
         '-alg', help='algorithm choice[BnB|Approx|LS1|LS2]', required=True,
     )
     parser.add_argument('-time', help='cutoff time in seconds', required=True)
+
+    # NOTE: despecated since we don't use random
     parser.add_argument('-seed', help='seed', required=False)
 
     args = parser.parse_args()
     input_graph = args.inst
     algs = args.alg
     cutoff_time = int(args.time)
+
     if args.seed is not None:
         seed = int(args.seed)
 

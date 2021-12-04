@@ -52,4 +52,4 @@ class indexMinPQ:
                 del self._value_finder[value]
                 self._N = self._N - 1
                 return value
-        raise KeyError('pop from an empty priority queue')
+        raise KeyError('Pop from an empty priority queue')

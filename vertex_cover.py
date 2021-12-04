@@ -1,8 +1,6 @@
 """
-Wrapper file for the 4 algorithms,
-Input: -inst <filename.graph>, -alg[BnB|Approx|LS1|LS2],
-        -time <cutoff in seconds>, -seed <random seet>
-        where the -seed argument can be omitted for Bnb and Approx
+Wrapper file for the 2 algorithms,
+Input: -inst <filename.graph>, -alg[BnB|Approx], -time <cutoff in seconds>
 Output: trace file and sol file
 For example: to run it for the email.graph file with branch-and-bound
              with 30s as cutoff time: type in

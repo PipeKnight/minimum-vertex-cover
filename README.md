@@ -1,10 +1,8 @@
 # minimum-vertex-cover
 
-Applied Graph Theory course project to implement branch and bound algorithm on minimum vertex cover problem.
+Applied Graph Theory course project to implement branch and bound algorithm (BnB) on minimum vertex cover (MVC) problem.
 
 The MVC problem seeks the smallest set of vertices such that every edge in the graph has at-least one endpoint in it, thereby forming the MVC solution.The BnB algorithm is an exact technique that systematically traverses the search space evaluating all options.
-
-Solving the vertex cover problem using the BnB strategy.
 
 Instruction for running branch-and-bound algorithm
 

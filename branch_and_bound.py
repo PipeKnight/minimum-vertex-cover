@@ -11,7 +11,7 @@ import networkx as nx
 
 import approximation
 import graph_io
-import priorityQueue
+import priority_queue
 
 
 class bnb:
@@ -112,7 +112,7 @@ class bnb:
         if update_rate_0 == 0:
             update_rate_0 = 1
 
-        sub_problems = priorityQueue.indexMinPQ()
+        sub_problems = priority_queue.indexMinPQ()
         # initial_lb = self.lower_bound_edge_deletion(G)
         approx_solution = self.approx_edge_delection(G)
         initial_lb = len(approx_solution) / 2

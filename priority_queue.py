@@ -3,7 +3,7 @@ import heapq
 import itertools
 
 # priority queue data structure
-class indexMinPQ:
+class my_priority_queue:
     def __init__(self):
         self._N = 0
         self._pq = []
@@ -11,7 +11,7 @@ class indexMinPQ:
         self._REMOVED = '<removed_task>'
         self._counter = itertools.count()
 
-    def isEmpty(self):
+    def is_empty(self):
         return self._N == 0
 
     def size(self):
@@ -27,7 +27,7 @@ class indexMinPQ:
         heapq.heappush(self._pq, entry)
         self._N = self._N + 1
 
-    def changeKey(self, value, newkey):
+    def change_key(self, value, newkey):
         if value in self._value_finder:
             self.remove_value(value)
             count = next(self._counter)

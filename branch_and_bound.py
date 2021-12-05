@@ -73,7 +73,7 @@ class bnb:
             )
         ]
 
-    def isCover(self, sub_V, G):
+    def is_cover(self, sub_V, G):
         """return True if sub_V is a vertex cover for G"""
         for e in G.edges_iter():
             if e[0] not in sub_V and e[1] not in sub_V:
@@ -112,7 +112,7 @@ class bnb:
         if update_rate_0 == 0:
             update_rate_0 = 1
 
-        sub_problems = priority_queue.indexMinPQ()
+        sub_problems = priority_queue.my_priority_queue()
         # initial_lb = self.lower_bound_edge_deletion(G)
         approx_solution = self.approx_edge_delection(G)
         initial_lb = len(approx_solution) / 2
@@ -130,7 +130,7 @@ class bnb:
 
         counter = 0
 
-        while not sub_problems.isEmpty():
+        while not sub_problems.is_empty():
             sub_p = sub_problems.pop()
 
             if sub_p[0] is None:

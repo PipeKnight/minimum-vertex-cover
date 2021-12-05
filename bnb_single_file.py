@@ -13,7 +13,7 @@ import networkx as nx
 
 
 # priority queue data structure
-class indexMinPQ:
+class my_priority_queue:
     def __init__(self):
         self._N = 0
         self._pq = []
@@ -21,7 +21,7 @@ class indexMinPQ:
         self._REMOVED = '<removed_value_placeholder>'
         self._counter = itertools.count()
 
-    def isEmpty(self):
+    def is_empty(self):
         return self._N == 0
 
     def size(self):
@@ -37,7 +37,7 @@ class indexMinPQ:
         heapq.heappush(self._pq, entry)
         self._N = self._N + 1
 
-    def changeKey(self, value, newkey):
+    def change_key(self, value, newkey):
         if value in self._value_finder:
             self.remove_value(value)
             count = next(self._counter)
@@ -143,7 +143,7 @@ class bnb:
             )
         ]
 
-    def isCover(self, sub_V, G):
+    def is_cover(self, sub_V, G):
         """return True if sub_V is a vertex cover for G"""
         for e in G.edges_iter():
             if e[0] not in sub_V and e[1] not in sub_V:
@@ -184,7 +184,7 @@ class bnb:
         if update_rate_0 == 0:
             update_rate_0 = 1
 
-        sub_problems = indexMinPQ()
+        sub_problems = my_priority_queue()
         # initial_lb = self.lower_bound_edge_deletion(G)
         approx_solution = self.approx_edge_delection(G)
         initial_lb = len(approx_solution) / 2
@@ -202,7 +202,7 @@ class bnb:
 
         counter = 0
 
-        while not sub_problems.isEmpty():
+        while not sub_problems.is_empty():
             sub_p = sub_problems.pop()
 
             if sub_p[0] is None:

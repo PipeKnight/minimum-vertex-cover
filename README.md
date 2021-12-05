@@ -9,7 +9,7 @@ Instruction for running branch-and-bound algorithm
 Input: `-inst <filename.graph>`, `-alg[BnB|Approx]`, `-time`
 Output: trace file and sol file: note the output files will be put in a subdirectory named output.
 
-For example: to run it for the email.graph file with branch and bound with 30s as cutoff time: type in `python vertex_cover.py -inst ./DATA/email.graph -alg BnB -time 30`
+For example: to run it for the email.graph file with branch and bound with 30s as cutoff time: type in `python vertex_cover.py -inst ./Data/email.graph -alg BnB -time 30`
 
 where `./Data/email.graph` is the path to the graph file.
 

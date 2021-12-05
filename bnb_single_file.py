@@ -371,4 +371,4 @@ def run_bnb(input_file, cutoff_time):
 if __name__ == '__main__':
     # run_bnb = bnb()
     # cProfile.run("run_bnb.pre_test()")
-    run_bnb('./DATA/karate.graph', 30)
+    run_bnb('./Data/karate.graph', 30)

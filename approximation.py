@@ -58,19 +58,15 @@ class approximation:
 
         cover = sorted(list(cover))
 
-        output_trace = open(trace_file, 'w')
-        current_time = time.time() - start_time
-        output_trace.write('%.2f,%d\n' % (current_time, len(cover)))
-        output_trace.close()
-
-        output_result = open(result_file, 'w')
-        output_result.write('%d\n' % (len(cover)))
-        if cover:
-            for i in range(len(cover) - 1):
-                output_result.write('%d,' % (cover[i]))
-            output_result.write('%d' % (cover[-1]))
-        output_result.close()
-
+        with open(trace_file, 'w') as output_trace:
+            current_time = time.time() - start_time
+            output_trace.write('%.2f,%d\n' % (current_time, len(cover)))
+        with open(result_file, 'w') as output_result:
+            output_result.write('%d\n' % (len(cover)))
+            if cover:
+                for i in range(len(cover) - 1):
+                    output_result.write('%d,' % (cover[i]))
+                output_result.write('%d' % (cover[-1]))
         return cover
 
 
@@ -88,12 +84,8 @@ def run_approx(input_file, cutoff_time):
     filename = input_file[start + 1 : end]
 
     # generate output file names
-    output_sol = (
-        './output/' + filename + '_Approx_' + str(cutoff_time) + '.sol'
-    )
-    output_trace = (
-        './output/' + filename + '_Approx_' + str(cutoff_time) + '.trace'
-    )
+    output_sol = f'./output/{filename}_Approx_{str(cutoff_time)}.sol'
+    output_trace = f'./output/{filename}_Approx_{str(cutoff_time)}.trace'
 
     # output files are put in the "output" folder
     # if this folder doesn't exist, create the folder

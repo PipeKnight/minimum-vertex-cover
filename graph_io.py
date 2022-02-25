@@ -15,13 +15,10 @@ def read_graph(filename):
         n, m = num_data[0], num_data[1]
 
         G = nx.Graph()
-        i = 1
-        for line in my_graph:
+        for i, line in enumerate(my_graph, start=1):
             edge_end = list(map(int, line.split()))
             i_edges = [(i, v) for v in edge_end]
             G.add_edges_from(i_edges)
-            i += 1
-
     return G
 
 
